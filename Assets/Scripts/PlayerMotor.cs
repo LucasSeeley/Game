@@ -27,9 +27,9 @@ public class PlayerMotor : MonoBehaviour
     {
         Vector3 moveDirection = Vector3.zero;
         moveDirection.x = input.x;
-        animator.SetInteger("X-Axis", (int)input.x);
         moveDirection.z = input.y;
-        animator.SetInteger("Y-Axis", (int)input.y);
+        animator.SetFloat("X-Axis", (float)input.x);
+        animator.SetFloat("Y-Axis", (float)input.y);
         controller.Move(transform.TransformDirection(moveDirection) * speed * Time.deltaTime);
     }
 }
