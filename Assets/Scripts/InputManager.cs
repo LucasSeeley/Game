@@ -16,6 +16,9 @@ public class InputManager : MonoBehaviour
         playerInput = new PlayerInput();
         onFoot = playerInput.onFoot;
         motor = GetComponent<PlayerMotor>();
+        // every time jump is performed we use a callback contaxt to call the jump method
+        // other options: started, canceled, performed
+        onFoot.Jump.performed += ctx => motor.Jump();
     }
 
     void FixedUpdate()
