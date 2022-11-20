@@ -23,6 +23,7 @@ public class PlayerMotor : MonoBehaviour
     void FixedUpdate()
     {
         isGrounded = controller.isGrounded;
+        animator.SetBool("IsGrounded", isGrounded);
     }
 
     // receive the inputs for inputmanager and apply them to character controller
